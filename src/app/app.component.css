@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #355764;
+    color: white;
+    height: 5rem;
+  }
+  
+  .title {
+    padding-left: 0.8rem;
+  }
+  
+  .btn {
+    margin: 0 0 0 0.5rem;
+    border-radius: 10px;
+  }

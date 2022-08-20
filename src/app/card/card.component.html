@@ -1,0 +1,13 @@
+<div class="row">
+    <div
+     class="card column text-white bg-primary mb-3"
+     *ngFor="let course of totalCourses"
+      style="max-width: 20rem;">
+        <div class="card-header">{{course.name}}</div>
+        <div class="card-body">
+            <p class="card-text">{{course.info}}</p>
+            <a class="card-link">More</a>
+        </div>
+    </div>
+
+</div>

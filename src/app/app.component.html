@@ -1,0 +1,50 @@
+<div class="header mb-3">
+
+  <h1 class="title">
+    <i class="fa-solid fa-graduation-cap"></i> Software College
+  </h1>
+
+  <div class="btns">
+
+    <button type="button" class="btn btn-success" (click)="showHome()">Home</button>
+    <button type="button" class="btn btn-success" (click)="showCourses()">Courses</button>
+    <button type="button" class="btn btn-success" (click)="showStudents()">Students</button>
+
+  </div>
+</div>
+
+
+<ng-container *ngIf="homeFlag">
+  <div class="jumbotron">
+    <h1 class="display-3">Welcome</h1>
+    <p class="lead">Hackeru Software Department!</p>
+  </div>
+</ng-container>
+
+
+
+<ng-container *ngIf="coursesFlag">
+  <app-card #child>
+    <p>This website was developed in {{ child.totalCourses[5].name }}</p>
+  </app-card>
+</ng-container>
+
+
+<ng-container *ngIf="studentsFlag">
+  <div class="row">
+    <div class="column">
+      <img style="width:600px; height: 400px;" class="img-thumbnail"
+        src="https://img.freepik.com/free-photo/overhead-portrait-international-students-waiting-test-college-group-university-mates-sitting-floor-with-books-laptops-doing-homework_197531-3819.jpg?w=2000"
+        alt="Thumbnail image">
+    </div>
+    <div class="column">
+      <app-course-list #child></app-course-list>
+    </div>
+    <div class="column" *ngIf="courseList?.showStudentComponent">
+      <app-students-table [selectedCourse]="courseList.selectedCourse"></app-students-table>
+    </div>
+  </div>
+</ng-container>
+
+
+<app-footer></app-footer>
